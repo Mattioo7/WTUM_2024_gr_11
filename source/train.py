@@ -1,8 +1,10 @@
 import torch
 from ultralytics import YOLO
 
-# Load a model
-model = YOLO("yolov8n.yaml")  # build a new model from scratch
+def main():
+    model = YOLO("yolov8n.yaml")  # build a new model from scratch
+    results = model.train(data="config.yaml", epochs=1)  # train the model
 
-# Use the model
-results = model.train(data="config.yaml", epochs=2)  # train the model
+if __name__ == '__main__':
+    torch.multiprocessing.freeze_support()  # Dodaj tę linię
+    main()
