@@ -15,7 +15,7 @@ class VideoPlayer:
 
         # Load YOLOv8 models
         self.localization_model = YOLO('Models/sign_localization.pt')
-        self.classification_model = YOLO('Models/sign_classification.pt')
+        self.classification_model = YOLO('Models/sign_classification_medium.pt')
 
         # Create GUI elements
         self.canvas = tk.Canvas(root, bg='black', width=self.canvas_width, height=self.canvas_height)
